@@ -12,7 +12,18 @@ namespace Bobby
 
         static void Main(string[] args)
         {
-            using (game = new Bobby_Game())
+            bool windowed = false;
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i].Equals("-windowed") || args[i].Equals("+windowed"))
+                {
+                    windowed = true;
+                    break;
+                }
+            }
+
+            using (game = new Bobby_Game(windowed))
             {
                 game.Run();
             }

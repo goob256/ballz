@@ -20,6 +20,7 @@ namespace Bobby
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        public static Microsoft.Xna.Framework.Game game;
 
 
        public static int[] order = {
@@ -102,6 +103,7 @@ namespace Bobby
 
         public static bool music_enabled = true;
         public static bool sound_enabled = true;
+        public static bool fullscreen_enabled = true;
         public static bool kitty_enabled = false;
 
         public BasicEffect effect;
@@ -127,13 +129,21 @@ namespace Bobby
 
         public SpriteFont font;
 
-        public Bobby_Game()
+        public Bobby_Game(bool windowed)
         {
+            game = this;
+
+            if (windowed)
+            {
+                fullscreen_enabled = false;
+            }
+
             graphics = new GraphicsDeviceManager(this);
 
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
-
+            graphics.HardwareModeSwitch = fullscreen_enabled;
+            graphics.IsFullScreen = fullscreen_enabled;
             graphics.ApplyChanges();
 
             Content.RootDirectory = "Content";
