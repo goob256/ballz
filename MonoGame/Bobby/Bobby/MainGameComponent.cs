@@ -687,7 +687,7 @@ namespace Bobby
 
         public static void load_atlas()
         {
-            atlas = Bobby.Program.game.Content.Load<Texture2D>("data/atlas");
+            atlas = Bobby.Program.game.Content.Load<Texture2D>("atlas");
 
             switch_rect = create_padded_rectangle(96, 96, 48, 48);
             gate_rect = create_padded_rectangle(96, 144, 48, 48);

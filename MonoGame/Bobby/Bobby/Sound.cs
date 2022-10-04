@@ -32,17 +32,17 @@ namespace Bobby
 
         public static void init(Game game)
         {
-            music = game.Content.Load<SoundEffect>("data/Bobby");
-            menu_music = game.Content.Load<SoundEffect>("data/menu_music");
+            music = game.Content.Load<SoundEffect>("Bobby");
+            menu_music = game.Content.Load<SoundEffect>("menu_music");
 
-            start = game.Content.Load<SoundEffect>("data/start");
-            boing = game.Content.Load<SoundEffect>("data/boing");
-            spiral = game.Content.Load<SoundEffect>("data/spiral");
-            bink = game.Content.Load<SoundEffect>("data/bink");
-            boost = game.Content.Load<SoundEffect>("data/boost");
-            switch_sample = game.Content.Load<SoundEffect>("data/switch");
-            meow = game.Content.Load<SoundEffect>("data/meow");
-            error = game.Content.Load<SoundEffect>("data/error");
+            start = game.Content.Load<SoundEffect>("start");
+            boing = game.Content.Load<SoundEffect>("boing");
+            spiral = game.Content.Load<SoundEffect>("spiral");
+            bink = game.Content.Load<SoundEffect>("bink");
+            boost = game.Content.Load<SoundEffect>("boost");
+            switch_sample = game.Content.Load<SoundEffect>("switch");
+            meow = game.Content.Load<SoundEffect>("meow");
+            error = game.Content.Load<SoundEffect>("error");
 
             start_time = DateTime.Now;
             random = new Random((int)(DateTime.Now - new DateTime(1981, 4, 10, 0, 0, 0, 0)).TotalMilliseconds);

@@ -46,7 +46,7 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            bg = game.Content.Load<Texture2D>("data/story");
+            bg = game.Content.Load<Texture2D>("story");
 
             base.LoadContent();
         }

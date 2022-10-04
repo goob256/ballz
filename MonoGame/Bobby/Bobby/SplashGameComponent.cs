@@ -43,8 +43,8 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            nooskewl = game.Content.Load<Texture2D>("data/nooskewl_square");
-            dereka = game.Content.Load<Texture2D>("data/dereka");
+            nooskewl = game.Content.Load<Texture2D>("nooskewl_square");
+            dereka = game.Content.Load<Texture2D>("dereka");
 
             base.LoadContent();
         }

@@ -1,9 +1,9 @@
 
 #----------------------------- Global Properties ----------------------------#
 
-/outputDir:bin/$(Platform)
-/intermediateDir:obj/$(Platform)
-/platform:DesktopGL
+/outputDir:bin
+/intermediateDir:obj
+/platform:Windows
 /config:
 /profile:Reach
 /compress:False
@@ -109,11 +109,6 @@
 /processorParam:Quality=Best
 /build:boost.wav
 
-#begin Content.mgcb
-/importer:
-/processor:
-/build:Content.mgcb
-
 #begin continue_txt.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -175,11 +170,6 @@
 /processorParam:TextureFormat=Compressed
 /build:font.spritefont
 
-#begin FUTRFW.TTF
-/importer:
-/processor:
-/build:FUTRFW.TTF
-
 #begin kitty_txt.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -215,6 +205,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:logo.png
+
+#begin menu_music.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:menu_music.wav
 
 #begin menu.png
 /importer:TextureImporter

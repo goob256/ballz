@@ -203,7 +203,7 @@ namespace Bobby
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            font = Content.Load<SpriteFont>("data/font");
+            font = Content.Load<SpriteFont>("font");
 
             MainGameComponent.load_atlas();
         }
