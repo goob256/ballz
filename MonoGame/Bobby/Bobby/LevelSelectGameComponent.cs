@@ -66,20 +66,20 @@ namespace Bobby
                 previews[i] = mkpreview(i);
             }
 
-            selector_bmp = game.Content.Load<Texture2D>("data/selection_arrow");
+            selector_bmp = game.Content.Load<Texture2D>("selection_arrow");
 
-            tinyfont = game.Content.Load<Texture2D>("data/tinyfont");
+            tinyfont = game.Content.Load<Texture2D>("tinyfont");
 
-            blackhole = game.Content.Load<Texture2D>("data/spacestuff/blackhole");
+            blackhole = game.Content.Load<Texture2D>("blackhole");
 
-            a_bmp = game.Content.Load<Texture2D>("data/a");
-            b_bmp = game.Content.Load<Texture2D>("data/b");
-            x_bmp = game.Content.Load<Texture2D>("data/x");
-            y_bmp = game.Content.Load<Texture2D>("data/y");
+            a_bmp = game.Content.Load<Texture2D>("a");
+            b_bmp = game.Content.Load<Texture2D>("b");
+            x_bmp = game.Content.Load<Texture2D>("x");
+            y_bmp = game.Content.Load<Texture2D>("y");
 
-            lock_bmp = game.Content.Load<Texture2D>("data/lock");
+            lock_bmp = game.Content.Load<Texture2D>("lock");
 
-            star_bmp = game.Content.Load<Texture2D>("data/star");
+            star_bmp = game.Content.Load<Texture2D>("star");
 
             base.LoadContent();
         }
@@ -128,7 +128,7 @@ namespace Bobby
             if (Input.get_a())
             {
                 // wait for release of A so we don't thrust off the start
-                while (GamePad.GetState(game.player_index).Buttons.A == ButtonState.Pressed)
+                //while (GamePad.GetState(game.player_index).Buttons.A == ButtonState.Pressed)
                     ;
 
                 bool unlocked = (selected == 0 || Bobby_Game.stars[selected - 1] >= 2);

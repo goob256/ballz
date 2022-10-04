@@ -71,21 +71,21 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            menu_bmp = game.Content.Load<Texture2D>("data/menu");
-            bg_bmp = game.Content.Load<Texture2D>("data/bg1");
-            space1_bmp = game.Content.Load<Texture2D>("data/spacestuff/images2");
-            space2_bmp = game.Content.Load<Texture2D>("data/spacestuff/images5");
+            menu_bmp = game.Content.Load<Texture2D>("menu-image");
+            bg_bmp = game.Content.Load<Texture2D>("bg1");
+            space1_bmp = game.Content.Load<Texture2D>("images2");
+            space2_bmp = game.Content.Load<Texture2D>("images5");
 
-            blue_button_bmp = game.Content.Load<Texture2D>("data/blue_button");
-            continue_bmp = game.Content.Load<Texture2D>("data/continue_txt");
-            settings_bmp = game.Content.Load<Texture2D>("data/settings_txt");
-            credits_bmp = game.Content.Load<Texture2D>("data/credits_txt");
-            logo_bmp = game.Content.Load<Texture2D>("data/logo");
+            blue_button_bmp = game.Content.Load<Texture2D>("blue_button");
+            continue_bmp = game.Content.Load<Texture2D>("continue_txt");
+            settings_bmp = game.Content.Load<Texture2D>("settings_txt");
+            credits_bmp = game.Content.Load<Texture2D>("credits_txt");
+            logo_bmp = game.Content.Load<Texture2D>("logo");
 
-            selector_bmp = game.Content.Load<Texture2D>("data/selection_arrow");
+            selector_bmp = game.Content.Load<Texture2D>("selection_arrow");
 
-            a_bmp = game.Content.Load<Texture2D>("data/a");
-            y_bmp = game.Content.Load<Texture2D>("data/y");
+            a_bmp = game.Content.Load<Texture2D>("a");
+            y_bmp = game.Content.Load<Texture2D>("y");
 
             base.LoadContent();
         }

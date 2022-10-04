@@ -63,14 +63,14 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            menu_bmp = game.Content.Load<Texture2D>("data/menu");
-            bg_bmp = game.Content.Load<Texture2D>("data/bg1");
-            space1_bmp = game.Content.Load<Texture2D>("data/spacestuff/images2");
-            space2_bmp = game.Content.Load<Texture2D>("data/spacestuff/images5");
+            menu_bmp = game.Content.Load<Texture2D>("menu-image");
+            bg_bmp = game.Content.Load<Texture2D>("bg1");
+            space1_bmp = game.Content.Load<Texture2D>("images2");
+            space2_bmp = game.Content.Load<Texture2D>("images5");
 
-            logo_bmp = game.Content.Load<Texture2D>("data/logo");
+            logo_bmp = game.Content.Load<Texture2D>("logo");
 
-            a_bmp = game.Content.Load<Texture2D>("data/a");
+            a_bmp = game.Content.Load<Texture2D>("a");
 
             base.LoadContent();
         }

@@ -56,10 +56,10 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            selector = game.Content.Load<Texture2D>("data/selection_arrow");
+            selector = game.Content.Load<Texture2D>("selection_arrow");
 
-            a_bmp = game.Content.Load<Texture2D>("data/a");
-            b_bmp = game.Content.Load<Texture2D>("data/b");
+            a_bmp = game.Content.Load<Texture2D>("a");
+            b_bmp = game.Content.Load<Texture2D>("b");
 
             base.LoadContent();
         }

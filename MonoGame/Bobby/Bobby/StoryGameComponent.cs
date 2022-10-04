@@ -68,7 +68,7 @@ namespace Bobby
             {
                 if (GamePad.GetState(p).Buttons.Start == ButtonState.Pressed)
                 {
-                    while (GamePad.GetState(p).Buttons.Start == ButtonState.Pressed)
+                    //while (GamePad.GetState(p).Buttons.Start == ButtonState.Pressed)
                         ;
                     if (!menu_music_played)
                     {

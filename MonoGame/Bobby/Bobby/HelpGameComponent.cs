@@ -40,12 +40,12 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            logo = game.Content.Load<Texture2D>("data/logo");
+            logo = game.Content.Load<Texture2D>("logo");
 
-            a_bmp = game.Content.Load<Texture2D>("data/a");
-            b_bmp = game.Content.Load<Texture2D>("data/b");
-            x_bmp = game.Content.Load<Texture2D>("data/x");
-            y_bmp = game.Content.Load<Texture2D>("data/y");
+            a_bmp = game.Content.Load<Texture2D>("a");
+            b_bmp = game.Content.Load<Texture2D>("b");
+            x_bmp = game.Content.Load<Texture2D>("x");
+            y_bmp = game.Content.Load<Texture2D>("y");
 
             base.LoadContent();
         }

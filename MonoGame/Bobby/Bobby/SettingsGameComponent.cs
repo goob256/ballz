@@ -78,26 +78,26 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            menu_bmp = game.Content.Load<Texture2D>("data/menu");
-            bg_bmp = game.Content.Load<Texture2D>("data/bg1");
-            space1_bmp = game.Content.Load<Texture2D>("data/spacestuff/images2");
-            space2_bmp = game.Content.Load<Texture2D>("data/spacestuff/images5");
+            menu_bmp = game.Content.Load<Texture2D>("menu-image");
+            bg_bmp = game.Content.Load<Texture2D>("bg1");
+            space1_bmp = game.Content.Load<Texture2D>("images2");
+            space2_bmp = game.Content.Load<Texture2D>("images5");
 
-            logo_bmp = game.Content.Load<Texture2D>("data/logo");
+            logo_bmp = game.Content.Load<Texture2D>("logo");
 
-            blue_button_bmp = game.Content.Load<Texture2D>("data/blue_button");
-            orange_button_bmp = game.Content.Load<Texture2D>("data/orange_button");
-            music_bmp = game.Content.Load<Texture2D>("data/music_txt");
-            sounds_bmp = game.Content.Load<Texture2D>("data/sounds_txt");
-            kitty_bmp = game.Content.Load<Texture2D>("data/kitty_txt");
+            blue_button_bmp = game.Content.Load<Texture2D>("blue_button");
+            orange_button_bmp = game.Content.Load<Texture2D>("orange_button");
+            music_bmp = game.Content.Load<Texture2D>("music_txt");
+            sounds_bmp = game.Content.Load<Texture2D>("sounds_txt");
+            kitty_bmp = game.Content.Load<Texture2D>("kitty_txt");
 
-            selector_bmp = game.Content.Load<Texture2D>("data/selection_arrow");
+            selector_bmp = game.Content.Load<Texture2D>("selection_arrow");
 
-            a_bmp = game.Content.Load<Texture2D>("data/a");
-            b_bmp = game.Content.Load<Texture2D>("data/b");
+            a_bmp = game.Content.Load<Texture2D>("a");
+            b_bmp = game.Content.Load<Texture2D>("b");
 
-            orange_icon = game.Content.Load<Texture2D>("data/orange_icon");
-            blue_icon = game.Content.Load<Texture2D>("data/blue_icon");
+            orange_icon = game.Content.Load<Texture2D>("orange_icon");
+            blue_icon = game.Content.Load<Texture2D>("blue_icon");
 
             base.LoadContent();
         }

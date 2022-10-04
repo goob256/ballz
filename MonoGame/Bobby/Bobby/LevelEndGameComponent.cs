@@ -55,9 +55,9 @@ namespace Bobby
         {
             spriteBatch = new SpriteBatch(game.GraphicsDevice);
 
-            a_bmp = game.Content.Load<Texture2D>("data/a");
-            y_bmp = game.Content.Load<Texture2D>("data/y");
-            star_bmp = game.Content.Load<Texture2D>("data/star");
+            a_bmp = game.Content.Load<Texture2D>("a");
+            y_bmp = game.Content.Load<Texture2D>("y");
+            star_bmp = game.Content.Load<Texture2D>("star");
 
             base.LoadContent();
         }

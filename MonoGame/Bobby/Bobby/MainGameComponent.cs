@@ -303,21 +303,21 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            fire = game.Content.Load<Texture2D>("data/fire");
-            rainbow = game.Content.Load<Texture2D>("data/rainbow");
+            fire = game.Content.Load<Texture2D>("fire");
+            rainbow = game.Content.Load<Texture2D>("rainbow");
             fire_data = new Color[FIRE_SIZE * FIRE_SIZE];
             rainbow_data = new Color[FIRE_SIZE * FIRE_SIZE];
             fire.GetData<Color>(fire_data);
             rainbow.GetData<Color>(rainbow_data);
 
-            space_bmps[0] = game.Content.Load<Texture2D>("data/spacestuff/fireball");
-            space_bmps[1] = game.Content.Load<Texture2D>("data/spacestuff/nebula");
-            space_bmps[2] = game.Content.Load<Texture2D>("data/spacestuff/blackhole");
-            space_bmps[3] = game.Content.Load<Texture2D>("data/spacestuff/images");
-            space_bmps[4] = game.Content.Load<Texture2D>("data/spacestuff/images2");
-            space_bmps[5] = game.Content.Load<Texture2D>("data/spacestuff/images3");
-            space_bmps[6] = game.Content.Load<Texture2D>("data/spacestuff/images4");
-            space_bmps[7] = game.Content.Load<Texture2D>("data/spacestuff/images5");
+            space_bmps[0] = game.Content.Load<Texture2D>("fireball");
+            space_bmps[1] = game.Content.Load<Texture2D>("nebula");
+            space_bmps[2] = game.Content.Load<Texture2D>("blackhole");
+            space_bmps[3] = game.Content.Load<Texture2D>("images");
+            space_bmps[4] = game.Content.Load<Texture2D>("images2");
+            space_bmps[5] = game.Content.Load<Texture2D>("images3");
+            space_bmps[6] = game.Content.Load<Texture2D>("images4");
+            space_bmps[7] = game.Content.Load<Texture2D>("images5");
 
             for (int i = 0; i < NUM_STARS; i++)
             {
@@ -326,11 +326,11 @@ namespace Bobby
 
             spaceThingInc = 960.0 / (60 * AVG_SPACE_THING_TIME);
 
-            bg_bmp = game.Content.Load<Texture2D>("data/bg1");
+            bg_bmp = game.Content.Load<Texture2D>("bg1");
 
-            b_bmp = game.Content.Load<Texture2D>("data/b");
-            x_bmp = game.Content.Load<Texture2D>("data/x");
-            y_bmp = game.Content.Load<Texture2D>("data/y");
+            b_bmp = game.Content.Load<Texture2D>("b");
+            x_bmp = game.Content.Load<Texture2D>("x");
+            y_bmp = game.Content.Load<Texture2D>("y");
 
             fan_air = new Texture2D(game.GraphicsDevice, 128, 128);
 
