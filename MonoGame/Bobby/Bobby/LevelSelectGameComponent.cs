@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 //using Microsoft.Xna.Framework.Storage;
 using System.IO;
+using System.ComponentModel;
+using System.Text;
 
 namespace Bobby
 {
@@ -152,7 +154,6 @@ namespace Bobby
 
             game.updateStarAlpha();
 
-            /*
             if (Input.get_x())
             {
                 if (false)//Guide.IsTrialMode)
@@ -164,6 +165,7 @@ namespace Bobby
                 else
                 {
                     Sound.play(Sound.bink);
+                    /*
                     if (game.load_storage_device == null || !game.load_storage_device.IsConnected)
                     {
                         game.load_storage_device = null;
@@ -178,11 +180,13 @@ namespace Bobby
                     {
                         load(game.load_storage_device);
                     }
+                    */
+                    load();
                 }
             }
             else if (Input.get_y())
             {
-                if (Guide.IsTrialMode)
+                if (false)//Guide.IsTrialMode)
                 {
                     Sound.play(Sound.error);
                     game.add_noticegamecomponent("Not available in trial mode");
@@ -191,6 +195,7 @@ namespace Bobby
                 else
                 {
                     Sound.play(Sound.bink);
+                    /*
                     if (game.save_storage_device == null || !game.save_storage_device.IsConnected)
                     {
                         game.save_storage_device = null;
@@ -205,11 +210,14 @@ namespace Bobby
                     {
                         save(game.save_storage_device);
                     }
+                    */
+                    save();
                 }
             }
 
             // If a save is pending, save as soon as the
             // storage device is chosen
+            /*
             if ((GameLoadRequested) && (result.IsCompleted))
             {
                 StorageDevice device = StorageDevice.EndShowSelector(result);
@@ -441,6 +449,7 @@ namespace Bobby
             draw_tinychar(x + 20, y, lo);
         }
 
+        /*
         private long readLong(Stream s)
         {
             UInt64 l = 0;
@@ -455,7 +464,7 @@ namespace Bobby
 
             return (long)l;
         }
-
+        
         private void writeLong(long l, Stream s)
         {
             for (int i = 0; i < 8; i++)
@@ -465,15 +474,115 @@ namespace Bobby
                 s.WriteByte(b);
             }
         }
+        */
 
         private void save()
         {
-            // FIXME!
+
+            String path = System.Environment.GetEnvironmentVariable("USERPROFILE");
+
+            path = path + "/Saved Games";
+            System.IO.Directory.CreateDirectory(path);
+            path = path + "/Bobby";
+            System.IO.Directory.CreateDirectory(path);
+            path = path + "/save.dat";
+
+            using (var stream = File.Open(path, FileMode.Create))
+            {
+                using (var writer = new BinaryWriter(stream, Encoding.UTF8, false))
+                {
+                    byte me = Bobby_Game.music_enabled ? (byte)1 : (byte)0;
+                    byte se = Bobby_Game.sound_enabled ? (byte)1 : (byte)0;
+                    byte ke = Bobby_Game.kitty_enabled ? (byte)1 : (byte)0;
+
+                    writer.Write(me);
+                    writer.Write(se);
+                    writer.Write(ke);
+
+                    // Save some extra space for new levels
+                    for (int i = 0; i < 1000; i++)
+                    {
+                        byte b;
+                        if (i < Bobby_Game.LEVELS)
+                        {
+                            b = (byte)Bobby_Game.stars[i];
+                        }
+                        else
+                            b = 0;
+                        writer.Write(b);
+                    }
+
+                    for (int i = 0; i < 1000; i++)
+                    {
+                        if (i < Bobby_Game.LEVELS)
+                        {
+                            TimeSpan t = Bobby_Game.best_times[i] - new TimeSpan();
+                            long l = (long)t.TotalMilliseconds;
+                            writer.Write((Int64)l);
+                        }
+                        else
+                            writer.Write((long)0);
+                    }
+                }
+            }
+
+            game.add_noticegamecomponent("Your game has been saved");
         }
 
         private void load()
         {
-            // FIXME!
+            String path = System.Environment.GetEnvironmentVariable("USERPROFILE");
+
+            path = path + "/Saved Games";
+            System.IO.Directory.CreateDirectory(path);
+            path = path + "/Bobby";
+            System.IO.Directory.CreateDirectory(path);
+            path = path + "/save.dat";
+
+            if (File.Exists(path))
+            {
+                using (var stream = File.Open(path, FileMode.Open))
+                {
+                    using (var reader = new BinaryReader(stream, Encoding.UTF8, false))
+                    {
+                        byte me = reader.ReadByte();
+                        byte se = reader.ReadByte();
+                        byte ke = reader.ReadByte();
+
+                        if (me == (byte)0)
+                        {
+                            Sound.stop_menu_music();
+                        }
+
+                        Bobby_Game.music_enabled = me == (byte)1 ? true : false;
+                        Bobby_Game.sound_enabled = se == (byte)1 ? true : false;
+                        Bobby_Game.kitty_enabled = ke == (byte)1 ? true : false;
+
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            byte b = reader.ReadByte();
+                            if (i < Bobby_Game.LEVELS)
+                            {
+                                Bobby_Game.stars[i] = (int)b;
+                            }
+                        }
+
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            if (i < Bobby_Game.LEVELS)
+                            {
+                                long l = (long)reader.ReadInt64();
+                                Bobby_Game.best_times[i] = TimeSpan.FromMilliseconds(l);
+                            }
+                        }
+                    }
+                }
+                game.add_noticegamecomponent("Your game has been loaded");
+            }
+            else
+            {
+                game.add_noticegamecomponent("No save data found!");
+            }
         }
 
         /*

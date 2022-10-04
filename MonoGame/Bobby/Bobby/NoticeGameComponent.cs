@@ -42,7 +42,7 @@ namespace Bobby
 
         protected override void LoadContent()
         {
-            a_bmp = game.Content.Load<Texture2D>("data/a");
+            a_bmp = game.Content.Load<Texture2D>("a");
 
             base.LoadContent();
         }
