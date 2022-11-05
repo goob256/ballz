@@ -6,6 +6,8 @@
 #include "ballz.h"
 #include "datnames.h"
 
+#define DOS
+
 
 DATAFILE *dat;
 BITMAP *buf, *wall, *spiral;
@@ -270,8 +272,13 @@ void draw_everything(void)
 		200,
 		0,
 		0,
+#ifdef DOS
+		320,
+		200
+#else
 		960,
 		600
+#endif
 	);
 
 	vsync();
@@ -357,8 +364,13 @@ int prompt(char *text)
 		200,
 		0,
 		0,
+#ifdef DOS
+		320,
+		200
+#else
 		960,
 		600
+#endif
 	);
 	
 	clear_keybuf();
@@ -466,8 +478,13 @@ void show_text(char *name, int fg, int bg)
 			200,
 			0,
 			0,
+#ifdef DOS
+			320,
+			200
+#else
 			960,
 			600
+#endif
 		);
 	}
 
@@ -481,8 +498,13 @@ void show_text(char *name, int fg, int bg)
 		200,
 		0,
 		0,
+#ifdef DOS
+		320,
+		200
+#else
 		960,
 		600
+#endif
 	);
 	destroy_bitmap(tmpbuf);
 
@@ -513,8 +535,13 @@ void start_the_game(void)
 			200,
 			0,
 			0,
+#ifdef DOS
+			320,
+			200
+#else
 			960,
 			600
+#endif
 		);
 		rest(2000);
 		nobjs = 0;
@@ -549,7 +576,11 @@ int main(int argc, char **argv)
 
 	/* initialize Allegro */
 	allegro_init();
+#ifdef DOS
+	set_gfx_mode(GFX_SAFE, 320, 200, 0, 0);
+#else
 	set_gfx_mode(GFX_SAFE, 960, 600, 0, 0);
+#endif
 	install_timer();
 	install_keyboard();
 	install_joystick(JOY_TYPE_AUTODETECT);

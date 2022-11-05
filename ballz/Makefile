@@ -11,8 +11,11 @@ else
 	EXE=ballz
 endif
 
+#ballz: ballz.c ballz.h datnames.h
+#	$(CC) $(FLAGS) allegro_icon.c ballz.c -o $(EXE) $(LIBS) -lm
+
 ballz: ballz.c ballz.h datnames.h
-	$(CC) $(FLAGS) allegro_icon.c ballz.c -o $(EXE) $(LIBS) -lm
+	$(CC) $(FLAGS) ballz.c -o $(EXE) $(LIBS) -lm
 
 clean:
 	@rm -f ballz $(EXE) *.o *~ core
